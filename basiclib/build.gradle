@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    //qq sdk
+    api files('libs/qq_mta-sdk-1.6.2.jar')
+    api files('libs/qq_sdk_v3.3.0_lite.jar')
+    //webview x5core
+    api files('libs/tbs_sdk_thirdapp_v3.5.0.1004_43500_sharewithdownload_withoutGame_obfs_20170801_113025.jar')
+    //umeng
+    api files('libs/umeng-common-1.4.0.jar')
+    api files('libs/umerror_android_1.0.0.jar')
+    //loadsir
+    api files('libs/loadsir.jar')
+    //todo
+    api files('libs/flame.jar')
+
+    //android
+    api "com.android.support:appcompat-v7:${rootProject.ext.dependencies.androidSupportVersion}"
+    api "com.android.support:design:${rootProject.ext.dependencies.androidSupportVersion}"
+    api "com.android.support:recyclerview-v7:${rootProject.ext.dependencies.androidSupportVersion}"
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
+
+    //event bus
+    api 'org.greenrobot:eventbus:3.1.1'
+    //pull-to-refresh
+    api 'com.github.nuptboyzhb.lib.uikit:superswiperefreshlayout:1.0.0'
+    //umeng
+    api 'com.umeng.sdk:analytics:7.4.4'
+    //音频缓存
+    api('com.danikula:videocache:2.6.3') {
+        exclude group: 'com.google.android'
+    }
+    //glide
+    api 'com.github.bumptech.glide:glide:3.8.0'
+    //glide图形转换工具
+    api 'jp.wasabeef:glide-transformations:2.0.1'
+    //easypermission
+    api 'pub.devrel:easypermissions:1.0.1'
+    //network
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    //myutil
+    api 'com.ci123.services.myutil:myutil:0.0.1'
+    //circle progress
+    api 'com.github.lzyzsd:circleprogress:1.2.1'
+    //social sdk share
+    api 'com.tsy.social:social-sdk-core:2.0.0'
+    //share 3rd platform
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:1.4.0'
+    //ButterKnife
+    api 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
+    // 组件化
+    api 'com.luojilab.ddcomponent:componentlib:1.3.0'
+    //状态栏
+    api 'com.jaeger.statusbarutil:library:1.4.0'
+    //alibaba json
+    api 'com.alibaba:fastjson:1.1.56.android'
+}

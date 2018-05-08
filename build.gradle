@@ -1,0 +1,60 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+
+        //butterknife
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        //for butterknife
+        classpath 'com.jakewharton:butterknife-gradle-plugin:9.0.0-SNAPSHOT'
+        //for DDComponent组件化
+        classpath 'com.luojilab.ddcomponent:build-gradle:1.2.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+
+        //pull to refresh
+        maven { url  "http://dl.bintray.com/nuptboyzhb/maven" }
+        // temp private lib need to change
+        maven { url "http://maven.nibaguai.com:8081/nexus/content/repositories/releases/" }
+        //微博sdk share
+        maven { url "https://dl.bintray.com/thelasterstar/maven" }
+        //circle progress
+        maven { url "https://jitpack.io" }
+        //butterknife snapshots
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+}
+
+// 子project可以通过 rootProject.ext.android.compileSdkVersion 来获得
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.3",
+            minSdkVersion: 18,
+            targetSdkVersion: 26
+    ]
+
+    dependencies = [
+            androidSupportVersion: "27.1.1"
+    ]
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

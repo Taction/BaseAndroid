@@ -1,0 +1,4 @@
+include ':app'      //应用
+include ':basicres' //基础资源模块
+include ':basiclib' //基础引用库模块
+include ':componentservice' //组件接口模块

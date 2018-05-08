@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_body"
+    android:layout_width="270dp"
+  	android:layout_height="wrap_content"
+  	android:background="@drawable/shape_white_13_corner"
+  	android:orientation="vertical"
+  	android:gravity="center_horizontal"
+  	>
+	<LinearLayout
+		android:id="@+id/first_item"
+		android:layout_width="match_parent"
+		android:layout_height="37dp"
+		android:orientation="vertical">
+
+	</LinearLayout>
+   	<LinearLayout
+		android:id="@+id/second_item"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_horizontal"
+        android:orientation="vertical"
+		>
+		<TextView
+			android:id="@+id/txt_content"
+			android:textColor="#3b3b3b"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="17sp"
+            android:includeFontPadding="false"
+			/>
+	</LinearLayout>
+   	<TextView
+		android:id="@+id/horizontal_divider"
+		android:layout_marginTop="26dp"
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="1dp"
+   	    android:background="#c1c1c1"
+   	    />
+   	
+   	<LinearLayout
+		android:id="@+id/bottom_item"
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="45dp"
+   	    android:orientation="horizontal"
+   	    >
+   	    <TextView
+   	        android:id="@+id/txt_cancel"
+   	        android:layout_width="0dp"
+   	        android:layout_height="fill_parent"
+   	        android:layout_weight="1"
+   	        android:gravity="center"
+   	        android:text="取消"
+   	        android:textColor="#665c53"
+   	        android:textSize="17sp" />
+
+   	    <TextView
+			android:id="@+id/vertical_divider"
+   	        android:layout_width="1dp"
+   	        android:layout_height="match_parent"
+   	        android:background="#c1c1c1"
+   	        />
+   	    
+   	    <TextView
+   	        android:id="@+id/txt_confirm"
+   	        android:layout_width="0dp"
+   	        android:layout_height="fill_parent"
+   	        android:layout_weight="1"
+   	        android:gravity="center"
+   	        android:text="确定"
+   	        android:textColor="#f46463"
+   	        android:textSize="17sp"
+   	         />
+
+   	</LinearLayout>
+</LinearLayout>
